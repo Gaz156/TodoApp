@@ -5,7 +5,7 @@ A full-featured note-taking web application built with ASP.NET Core MVC, SQL Ser
 
 ![Notes App Screenshot](https://via.placeholder.com/800x400.png?text=Notes+App+Screenshot)
 ![ASP.NET Core](https://img.shields.io/badge/ASP.NET_Core-8.0-purple)
-![SQL Server](https://www.microsoft.com/en-us/sql-server/)
+![SQL Server](https://img.shields.io/badge/SQL_Server-2022-blue)
 ![Bootstrap](https://img.shields.io/badge/Bootstrap-5.0-blueviolet)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
