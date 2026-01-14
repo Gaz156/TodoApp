@@ -1,0 +1,36 @@
+CREATE DATABASE NotesAppDB;
+GO
+
+
+USE NotesAppDB;
+GO
+
+
+CREATE TABLE Users (
+    UserId INT PRIMARY KEY IDENTITY(1,1),
+    Username NVARCHAR(100) NOT NULL UNIQUE,
+    Email NVARCHAR(256) NOT NULL UNIQUE,
+    PasswordHash NVARCHAR(MAX) NOT NULL,
+    FirstName NVARCHAR(100),
+    LastName NVARCHAR(100),
+    CreatedDate DATETIME DEFAULT GETDATE()
+);
+GO
+
+
+CREATE TABLE Notes (
+    NoteId INT PRIMARY KEY IDENTITY(1,1),
+    Title NVARCHAR(200) NOT NULL,
+    Content NVARCHAR(MAX),
+    CreatedDate DATETIME DEFAULT GETDATE(),
+    ModifiedDate DATETIME DEFAULT GETDATE(),
+    UserId INT NOT NULL,
+    FOREIGN KEY (UserId) REFERENCES Users(UserId) ON DELETE CASCADE
+);
+GO
+
+
+CREATE INDEX IX_Notes_UserId ON Notes(UserId);
+CREATE INDEX IX_Notes_CreatedDate ON Notes(CreatedDate DESC);
+GO
+
